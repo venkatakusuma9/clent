@@ -1,0 +1,16 @@
+<html>
+<head>
+   <title> All members</title>
+</head>
+<body><center>
+  <h1> List of all members</h1>
+  <ul>
+  {% for x in allmembers %}
+  <li> <a href="details/{{x.id}}">
+  {{x.name}}-{{x.num}}-{{x.marks}}
+  </a></li>
+  {% endfor %}
+  </ul>
+   <a href="addmember">New Member</a>
+</body>
+</html>

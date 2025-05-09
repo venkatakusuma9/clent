@@ -1,0 +1,12 @@
+{% extends "Master.html" %}
+{% block pagetitle %}
+Member details
+{% endblock %}
+{% block content %}
+<h1> {{mymember.name}} Details </h1>
+Name: {{mymember.name}}<br>
+Num: {{mymember.num}}<br>
+Marks: {{mymember.marks}}<br>
+<a href="../">Back</a><br><br>
+<a href="/firstapp/allmembers/">Back to list </a>
+{% endblock %}

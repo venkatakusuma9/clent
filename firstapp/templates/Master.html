@@ -1,0 +1,45 @@
+<!Doctype html>
+{% load static %}
+<html>
+<head>
+<title>
+{% block pagetitle %}
+{% endblock %}
+</title>
+<link rel="stylesheet" href="{% static 'mystyles.css' %}">
+<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+</head>
+<body><center>
+<div class="container">
+<img src="{% static 'logo.png' %}"><br>
+<ul class="nav bg-info">
+<li class="nav-item">
+<a class="nav-link link-light" href="/firstapp/main">HOME</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/firstapp/allmembers">Members</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/Project1/stu_cla">Classes</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/Project1/allstudent">Students</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/Employee/allemp">Employee</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/user/allusers">Users</a>
+</li>
+<li class="nav-item">
+<a class="nav-link link-light" href="/logins/logout">Logout</a>
+</li>
+</ul>
+</div>
+{% block content %}
+{% endblock %}
+</body>
+</html>

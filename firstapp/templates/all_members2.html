@@ -1,0 +1,39 @@
+{% extends "Master.html" %}
+{% block pagetitle %}
+List of all members
+{% endblock %}
+{% block content %}
+<center>
+<h1> List of all members</h1>
+<form name="memsearch" action="" method="POST">
+{% csrf_token %}
+search member:
+    <input type="text" name="memval" value="{{mymemval}}"><br><br>
+    <input type="submit" name="Search" value="search"><br><br>
+    </form>
+    <table style="border: 1px solid black;">
+    <thead>
+    <th> SI.NO</th>
+    <th> ID</th>
+    <th> NAME</th>
+    <th> NUM</th>
+    <th> MARKS</th>
+    <th> VIEWS</th>
+    <th> EDIT</th>
+    <th> DELETE</th>
+    </thead>
+    {% for x in allmembers %}
+    <tr>
+    <td>{{ forloop.counter}}</td>
+    <td>{{x.id}}</td>
+    <td>{{x.name}}</td>
+    <td>{{x.num}}</td>
+    <td>{{x.marks}}</td>
+    <td><a href="details\{{x.id}}">View</a></td>
+    <td><a href="editmember\{{x.id}}">Edit</a></td>
+    <td><a href="deletemember\{{x.id}}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+    <a href="addmember">New Member</a> &nbsp;&nbsp;&nbsp; <a href="/firstapp/main">Back</a>
+    {% endblock %} 

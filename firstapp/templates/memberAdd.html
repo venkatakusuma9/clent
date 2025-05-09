@@ -1,0 +1,14 @@
+{% extends "Master.html" %}
+{% block pagetitle %}
+ New Member
+{% endblock %}
+{% block content %}
+<center>
+<h1> NEW MEMBER</h1>
+<form action=" " method ="POST">
+{% csrf_token %}
+{{myform.as_p}}
+<input type="submit" name="save" value="save">
+<input type="button" name="cancel" value="cancel" onclick="document.location.href='/allmembers'">
+</form>
+{% endblock %}
